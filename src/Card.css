@@ -1,0 +1,38 @@
+.bookcard-container{
+    border: 2px solid;
+    border-radius: 15px;
+    max-width: 200px;
+    min-height: auto;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: 3px 3px rgba(54, 54, 54, 0.274);
+    background-color: aliceblue;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.book-cover{
+    width: 100%;
+    border-radius: 13px 13px 0 0;
+}
+
+.book-title{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.book-pricetag{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin: 10px;
+}
+
+.bookcard-container:hover{
+    transform: scale(1.05, 1.05);
+    cursor: pointer;
+}

@@ -1,0 +1,18 @@
+.header-container{
+    border: 5px dotted;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.header-container > .mainTitle{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 50px;
+    margin-top: 10px;
+    padding: 0;
+}
+
+.header-container > .subTitle{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-size: 20px;
+}
