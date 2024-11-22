@@ -5,6 +5,7 @@ import Home from "./Pages/Home.jsx";
 import About from "./Pages/About.jsx";
 import Books from "./Pages/Books.jsx";
 import Navbar from './Navbar.jsx';
+import Footer from './Footer.jsx';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/books" element={<Books/>}/>
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );

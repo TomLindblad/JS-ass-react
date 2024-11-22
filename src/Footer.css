@@ -1,0 +1,20 @@
+.footer-container{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+
+    background-color: grey;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social{
+    display: flex;
+}
+
+.icon{
+    margin: 12px;
+    font-size: 1.5em;
+}
