@@ -8,14 +8,14 @@ background-color: burlywood;
 padding: 0;
 }
 
-li{
+.navLink{
     display: inline-block;
     margin: 0;
     padding: 10px 30px 10px 30px;
     background-color: rgb(173, 141, 100);
 }
 
-li:hover{
+.navLink:hover{
     color:blueviolet;
     background-color: brown;
     transition: all 0.5s;

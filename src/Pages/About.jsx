@@ -6,7 +6,8 @@ function About() {
   let [number, setNumber] = useState(0);
 
   const addOne = () => {
-    setNumber(number + 1);
+    setNumber(number => number + 1);
+    setNumber(poopnumber => poopnumber + 1);
   };
 
   const removeOne = () => {
@@ -14,7 +15,7 @@ function About() {
   };
 
   const reset = () => {
-    setNumber(number = 0);
+    setNumber(0);
   };
 
 
