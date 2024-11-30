@@ -3,13 +3,15 @@ import { useState } from "react";
 
 function ToDoList(){
 
-    const [toDoArray, setToDoArray] = useState(["Walk the walk", "Dig that hole", "Buy some rope"]);
+    const [toDoArray, setToDoArray] = useState(["Go to the Systembolaget and buy some boxes of fairly decent wine.", "Pick the apples.", "Buy a few inches of rope.", "Take the axolotl to the bathhouse."]);
 
     function addTaskHandler() {
         const newTask = document.getElementById("taskInput").value;
+        if (newTask !== ""){
         document.getElementById("taskInput").value = "";
 
-        setToDoArray(toDo => [...toDo, newTask]); 
+        setToDoArray(toDo => [...toDo, newTask]);
+        } 
     }
 
     function removeTaskHandler(index){
@@ -34,35 +36,38 @@ function ToDoList(){
 
 
     return(
-        <div>
+        <div className="main-todo-container">
             <h3 className="quote">“It's the job that's never started as takes longest to finish.” - Sam Gamgee</h3>
-            <h3>To do:</h3>
-            <ul className="toDoContainer">
-                {toDoArray.map((task, index) => (
-                    <li className="toDoList"key={index}> {task} 
-                    <button 
-                        className="regular-btn moveUp-btn"
-                        onClick={() => moveTaskUpHandler(index)}>
-                        Move up
-                    </button>
-                    <button 
-                        className="regular-btn moveDown-btn"
-                        onClick={() => moveTaskDownHandler(index)}>
-                        Move down
-                    </button>
-                    <button 
-                        className="regular-btn remove-btn" 
-                        onClick={() => removeTaskHandler(index)}>
-                        Remove
-                    </button>
-                    </li>))}
-            </ul>
-             <input type="text" placeholder="Insert your task" id="taskInput" />
+            <h2>To-do list:</h2>
+            <input type="text" placeholder="Write a new task..." id="taskInput" />
              <button 
-                className="regular-btn" 
+                className="add-btn" 
                 onClick={addTaskHandler}>
                 Add task
             </button>
+            <ul className="toDoContainer">
+                {toDoArray.map((task, index) => (
+                    <li className="toDoList"key={index}> 
+                        <div className="taskText">{task}</div> 
+                        <div className="listBtn-container">
+                            <button 
+                                className="small-btn move-btn"
+                                onClick={() => moveTaskUpHandler(index)}>
+                                <i className="fa-solid fa-arrow-up"></i>
+                            </button>
+                            <button 
+                                className="small-btn move-btn"
+                                onClick={() => moveTaskDownHandler(index)}>
+                                <i className="fa-solid fa-arrow-down"></i>
+                            </button>
+                            <button 
+                                className="small-btn remove-btn" 
+                                onClick={() => removeTaskHandler(index)}>
+                                <i className="fa-solid fa-trash"></i>
+                            </button>
+                        </div>
+                    </li>))}
+            </ul>
         </div>
     );
 

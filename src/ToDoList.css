@@ -1,23 +1,83 @@
+.main-todo-container{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 700;
+}
+h2{
+    font-size: 2.5em;
+    margin: 0 0 10px 0;
+
+}
+#taskInput{
+    font-size: 1.2em;
+    padding: 10px 15px;
+    border-top: 2px solid black;    
+    border-right: none;    
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    border-radius: 5px 0 0 5px;
+    min-width: 400px;
+    outline: none;
+}
+
+.add-btn{
+    font-size: 1.2em;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: 700;
+    border-top: 2px solid black;    
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    background-color: bisque;
+    transition: all 0.2s ease;
+}
+
+.add-btn:hover{
+    background-color: rgb(201, 180, 114);
+}
+
 .toDoContainer{
     margin: 10px;
     padding: 0;
 }
 
 .toDoList{
+    display: flex;
+    align-items: center;
+    text-align: center;
     list-style: none;
     padding: 10px 15px;
     margin: 3px 0;
     border: 2px solid black;
-    font-family: 'Courier New', Courier, monospace;
+    border-radius: 5px;
     font-size: 1.2em;
+    font-weight: 700;
     background-color:rgb(199, 201, 179)
 }
 
-.regular-btn{
+.taskText{
+    flex: 1;
+}
+
+.small-btn{
     margin: 0 3px;
     padding: 3px 6px;
     cursor: pointer;
+    width: 32px;
+    border-radius: 5px;
+    transition: all 0.2s ease;
 }
+
+.move-btn{
+    background-color: rgb(91, 253, 126);
+}
+
+.move-btn:hover{
+    background-color: rgb(77, 204, 104);
+    color: aliceblue;
+ }
 
 .remove-btn{
     background-color: red;
@@ -25,4 +85,10 @@
 
 .remove-btn:hover{
     background-color: rgb(196, 0, 0);
+    color: aliceblue;
 }
+
+.fa-solid{
+    position: relative;
+    top: 2px;
+} 
