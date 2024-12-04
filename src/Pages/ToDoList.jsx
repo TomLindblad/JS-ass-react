@@ -3,14 +3,17 @@ import { useState } from "react";
 
 function ToDoList(){
 
-    const [toDoArray, setToDoArray] = useState(["Go to the Systembolaget and buy some boxes of fairly decent wine.", "Pick the apples.", "Buy a few inches of rope.", "Take the axolotl to the bathhouse."]);
+    let taskArray = ["Go to the Systembolaget and buy some boxes of fairly decent wine.", "Pick the apples.", "Buy a few inches of rope.", "Take the axolotl to the bathhouse."];
 
-    function addTaskHandler() {
-        const newTask = document.getElementById("taskInput").value;
+    const [toDoArray, setToDoArray] = useState(taskArray);
+
+    const [newTask, setNewTask] = useState();
+
+    function addTaskHandler() {/* Removed the getElementByID, changed to setNewTask 241204*/
         if (newTask !== ""){
-        document.getElementById("taskInput").value = "";
 
         setToDoArray(toDo => [...toDo, newTask]);
+        setNewTask("");/* Clears the inputfield after adding the task 241204*/
         } 
     }
 
@@ -39,8 +42,15 @@ function ToDoList(){
         <div className="main-todo-container">
             <h3 className="quote">“It's the job that's never started as takes longest to finish.” - Sam Gamgee</h3>
             <h2>To-do list:</h2>
-            <input type="text" placeholder="Write a new task..." id="taskInput" />
-             <button 
+            <label className="visually-hidden" for="taskInput">Task Input</label>{/* Added label and "visually-hidden"-class for screenreaders 241204*/}
+            <input
+                type="text" 
+                placeholder="Write a new task..." 
+                name="taskInput"                 
+                id="taskInput" 
+                onChange={(e) => setNewTask(e.target.value)}
+                value={newTask}/>{/* added so that the value is the variable newTask 241204*/}
+            <button 
                 className="add-btn" 
                 onClick={addTaskHandler}>
                 Add task
